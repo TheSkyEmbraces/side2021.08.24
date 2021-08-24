@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen overlay with Search icon - SEARCH OVERLAY IN CSS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+    <div class="close">
+        <i class="fa fa-close"></i>
+    </div>
+
+    <div class="search">
+        <i class="fa fa-search"></i>
+        <input type="text" class="input" placeholder="Search Now">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        (function ($) {
+            const searchButton = $('.fa-search'),
+                closeButton = $('.close'),
+                input = $('.input');
+            searchButton.on('click', function () {
+                $(this).parent().addClass('open');
+                closeButton.fadeIn(500);
+                input.fadeIn(500);
+            });
+
+            closeButton.on('click', function () {
+                searchButton.parent().removeClass('open');
+                closeButton.fadeOut(500);
+                input.fadeOut(500);
+            })
+        })(jQuery)
+    </script>
+</body>
+
+</html>
